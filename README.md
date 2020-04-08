@@ -28,7 +28,7 @@ categories: github jekyll
 
 ## Proposition
 
-*<u>Defn.</u>* A <u>proposition</u> $P$ is a sentence that is either true or false, but not both.
+*<u>Defn.</u>* A <u>proposition</u> \\P\\ is a sentence that is either true or false, but not both.
 
 *<u>Ex.</u>*
 
