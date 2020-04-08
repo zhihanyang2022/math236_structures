@@ -1,4 +1,2 @@
 theme: jekyll-theme-leap-day
-markdown: kramdown
-kramdown:
-    math_engine: katex
+markdown: maruku
