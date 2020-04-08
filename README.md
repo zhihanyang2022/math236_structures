@@ -1,6 +1,14 @@
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+```yaml
+---
+layout: post
+mathjax: true
+comments: true
+title:  "Adding MathJax to a GitHub Pages Jekyll Blog"
+date:   2016-08-21 23:41:54 +0000
+categories: github jekyll
+---
+```
+
 
 # Math Structures W11
 
