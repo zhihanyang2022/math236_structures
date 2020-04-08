@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+% We can write notes using the percent symbol!
+% The first line above is to announce we are beginning a document, an article in this case, and we want the default font size to be 12pt
+\usepackage[utf8]{inputenc}
+% This is a package to accept utf8 input.  I normally do not use it in my documents, but it was here by default in Overleaf.
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{color}
+% These three packages are from the American Mathematical Society and includes all of the important symbols and operations 
+\usepackage{fullpage}
+% By default, an article has some vary large margins to fit the smaller page format.  This allows us to use more standard margins.
+
+\setlength{\parskip}{1em}
+% This gives us a full line break when we write a new paragraph
+
+\newcommand\w{\vec{w}}
+\newcommand\wt{\vec{w}^T}
+\newcommand\msb{S_B}
+\newcommand\msw{S_W}
+
+\begin{document}
+	
+	\title{%
+		Homework for Math Structures \\
+		\large Monday, Week 1 
+	}	
+	\author{Zhihan Yang}
+	\maketitle
+	
+	\section{1.5 Question 4a}
+	
+	Propositions:
+	\begin{itemize}
+		\item P: Sales go up.
+		\item Q: Expenses go up.
+		\item R: Boss is happy.
+	\end{itemize}
+
+	Premises:
+	\begin{itemize}
+		\item Either sales or expenses will go up: $P \lor Q$.
+		\item If sales go up, then the boss will be happy: $P \rightarrow R$.
+		\item If expenses go up, then the boss will be unhappy: $Q \rightarrow \lnot R$.
+	\end{itemize}
+
+	Argument: Sales and expenses will not both go up: $\lnot(P \land Q)$.
+	
+	\begin{tabular}{ c  c  c | c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c | c  c  c  c  c  c }
+		p & q & r & ( & ( & ( & p & $\lor$ & q & ) & $\&$ & ( & p & $\rightarrow$ & r & ) & ) & $\&$ & ( & q & $\rightarrow$ & $\sim$ & r & ) & ) & $\sim$ & ( & p & $\&$ & q & )\\
+		\hline 
+		$\top$ & $\top$ & $\top$ &  &  &  & $\top$ & $\top$ & $\top$ &  & $\top$ &  & $\top$ & $\top$ & $\top$ &  &  & \textcolor{red}{$\perp$} &  & $\top$ & $\perp$ & $\perp$ & $\top$ &  &  & \textcolor{red}{$\perp$} &  & $\top$ & $\top$ & $\top$ & \\
+		$\top$ & $\top$ & $\perp$ &  &  &  & $\top$ & $\top$ & $\top$ &  & $\perp$ &  & $\top$ & $\perp$ & $\perp$ &  &  & \textcolor{red}{$\perp$} &  & $\top$ & $\top$ & $\top$ & $\perp$ &  &  & \textcolor{red}{$\perp$} &  & $\top$ & $\top$ & $\top$ & \\
+		$\top$ & $\perp$ & $\top$ &  &  &  & $\top$ & $\top$ & $\perp$ &  & $\top$ &  & $\top$ & $\top$ & $\top$ &  &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\perp$ & $\top$ &  &  & \textcolor{red}{$\top$} &  & $\top$ & $\perp$ & $\perp$ & \\
+		$\top$ & $\perp$ & $\perp$ &  &  &  & $\top$ & $\top$ & $\perp$ &  & $\perp$ &  & $\top$ & $\perp$ & $\perp$ &  &  & \textcolor{red}{$\perp$} &  & $\perp$ & $\top$ & $\top$ & $\perp$ &  &  & \textcolor{red}{$\top$} &  & $\top$ & $\perp$ & $\perp$ & \\
+		$\perp$ & $\top$ & $\top$ &  &  &  & $\perp$ & $\top$ & $\top$ &  & $\top$ &  & $\perp$ & $\top$ & $\top$ &  &  & \textcolor{red}{$\perp$} &  & $\top$ & $\perp$ & $\perp$ & $\top$ &  &  & \textcolor{red}{$\top$} &  & $\perp$ & $\perp$ & $\top$ & \\
+		$\perp$ & $\top$ & $\perp$ &  &  &  & $\perp$ & $\top$ & $\top$ &  & $\top$ &  & $\perp$ & $\top$ & $\perp$ &  &  & \textcolor{red}{$\top$} &  & $\top$ & $\top$ & $\top$ & $\perp$ &  &  & \textcolor{red}{$\top$} &  & $\perp$ & $\perp$ & $\top$ & \\
+		$\perp$ & $\perp$ & $\top$ &  &  &  & $\perp$ & $\perp$ & $\perp$ &  & $\perp$ &  & $\perp$ & $\top$ & $\top$ &  &  & \textcolor{red}{$\perp$} &  & $\perp$ & $\top$ & $\perp$ & $\top$ &  &  & \textcolor{red}{$\top$} &  & $\perp$ & $\perp$ & $\perp$ & \\
+		$\perp$ & $\perp$ & $\perp$ &  &  &  & $\perp$ & $\perp$ & $\perp$ &  & $\perp$ &  & $\perp$ & $\top$ & $\perp$ &  &  & \textcolor{red}{$\perp$} &  & $\perp$ & $\top$ & $\top$ & $\perp$ &  &  & \textcolor{red}{$\top$} &  & $\perp$ & $\perp$ & $\perp$ & \\
+	\end{tabular}
+	
+	The 4th column shows the truth values for the 3 premises to be right at the same time. As we can see, when all premises are true (row 3 and 6), the argument is always true. Therefore, the argument is valid.
+	
+	\section{1.5 Question 4b}
+	
+	Propositions:
+	\begin{itemize}
+		\item P: Tax rate goes up.
+		\item Q: Unemployment rate goes up.
+		\item R: There is a recession.
+		\item S: GDP goes up.
+	\end{itemize}
+
+	Premises:
+	\begin{itemize}
+		\item If the tax rate and the employment rate both go up, then there will be a recession: $P \land Q \rightarrow R$.
+		\item If the GDP goes up, then there will not be a recession: $S \rightarrow \lnot R$.
+		\item The GDP and taxes are both going up: $S \land P$.
+	\end{itemize}
+	
+	Argument: The employment rate is not going up: $\lnot Q$.
+	
+	\begin{tabular}{ c  c  c  c | c  c  c  c  c  c  c  c  c | c  c  c  c  c  c | c  c  c  c  c | c  c }
+		
+		P & Q & R & S & ( & ( & P & $\&$ & Q & ) & $\rightarrow$ & R & ) & ( & S & $\rightarrow$ & $\sim$ & R & ) & ( & S & $\&$ & P & ) & $\sim$ & Q\\
+		\hline 
+		$\top$ & $\top$ & $\top$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ & $\top$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\top$ & $\top$ & $\top$ & $\perp$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\perp$ & $\top$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\top$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\top$ & $\top$ & $\perp$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\perp$} & $\perp$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\top$ & $\top$ & $\perp$ & $\perp$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\perp$} & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\top$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\top$ & $\perp$ & $\top$ & $\top$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ & $\top$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\top$ & $\perp$ & $\top$ & $\perp$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\perp$ & $\top$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\top$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\top$ & $\perp$ & $\perp$ & $\top$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\top$ & $\perp$ & $\perp$ & $\perp$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\top$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\perp$ & $\top$ & $\top$ & $\top$ &  &  & $\perp$ & $\perp$ & $\top$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ & $\top$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\perp$ & $\top$ & $\top$ & $\perp$ &  &  & $\perp$ & $\perp$ & $\top$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\perp$ & $\top$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\perp$ & $\top$ & $\perp$ & $\top$ &  &  & $\perp$ & $\perp$ & $\top$ &  & \textcolor{red}{$\top$} & $\perp$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\perp$ & $\top$ & $\perp$ & $\perp$ &  &  & $\perp$ & $\perp$ & $\top$ &  & \textcolor{red}{$\top$} & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\perp$} & $\top$\\
+		$\perp$ & $\perp$ & $\top$ & $\top$ &  &  & $\perp$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ & $\top$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\perp$ & $\perp$ & $\top$ & $\perp$ &  &  & $\perp$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\top$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\perp$ & $\top$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\perp$ & $\perp$ & $\perp$ & $\top$ &  &  & $\perp$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$ &  &  & $\top$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$\\
+		$\perp$ & $\perp$ & $\perp$ & $\perp$ &  &  & $\perp$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\top$} & $\top$ & $\perp$ &  &  & $\perp$ & \textcolor{red}{$\perp$} & $\perp$ &  & \textcolor{red}{$\top$} & $\perp$\\
+	\end{tabular}
+	
+	The 7 seventh row shows that the argument $\lnot Q$ is always true when all premises are true. Therefore, $\lnot Q$ is a valid argument. (The truth values of the premises are shown in red.)
+	
+	\section{1.5 Question 4c}
+	
+	Propositions:
+	\begin{itemize}
+		\item P: Warning light comes.
+		\item Q: The pressure is too high.
+		\item R: The relief valve is clogged.
+	\end{itemize}
+
+	Premises:
+	\begin{itemize}
+		\item The warning light will come if and only if the pressure is too high and the relief valve is clogged: $P \iff Q \land R$.
+		\item The relief valve is not clogged: $\lnot R$.
+	\end{itemize}
+
+	Argument: The warning light will come on if and only if the pressure is too high: $P \iff Q$.
+	
+    \begin{tabular}{ c  c  c | c  c  c  c  c  c  c  c  c | c  c | c  c  c  c  c }
+    	P & Q & R & ( & P & $\leftrightarrow$ & ( & Q & $\&$ & R & ) & ) & $\sim$ & R & ( & P & $\leftrightarrow$ & Q & )\\
+    	\hline 
+    	$\top$ & $\top$ & $\top$ &  & $\top$ & \textcolor{red}{$\top$} &  & $\top$ & $\top$ & $\top$ &  &  & \textcolor{red}{$\perp$} & $\top$ &  & $\top$ & \textcolor{red}{$\top$} & $\top$ & \\
+    	$\top$ & $\top$ & $\perp$ &  & $\top$ & \textcolor{red}{$\perp$} &  & $\top$ & $\perp$ & $\perp$ &  &  & \textcolor{red}{$\top$} & $\perp$ &  & $\top$ & \textcolor{red}{$\top$} & $\top$ & \\
+    	$\top$ & $\perp$ & $\top$ &  & $\top$ & \textcolor{red}{$\perp$} &  & $\perp$ & $\perp$ & $\top$ &  &  & \textcolor{red}{$\perp$} & $\top$ &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ & \\
+    	$\top$ & $\perp$ & $\perp$ &  & $\top$ & \textcolor{red}{$\perp$} &  & $\perp$ & $\perp$ & $\perp$ &  &  & \textcolor{red}{$\top$} & $\perp$ &  & $\top$ & \textcolor{red}{$\perp$} & $\perp$ & \\
+    	$\perp$ & $\top$ & $\top$ &  & $\perp$ & \textcolor{red}{$\perp$} &  & $\top$ & $\top$ & $\top$ &  &  & \textcolor{red}{$\perp$} & $\top$ &  & $\perp$ & \textcolor{red}{$\perp$} & $\top$ & \\
+    	$\perp$ & $\top$ & $\perp$ &  & $\perp$ & \textcolor{red}{$\top$} &  & $\top$ & $\perp$ & $\perp$ &  &  & \textcolor{red}{$\top$} & $\perp$ &  & $\perp$ & \textcolor{red}{$\perp$} & $\top$ & \\
+    	$\perp$ & $\perp$ & $\top$ &  & $\perp$ & \textcolor{red}{$\top$} &  & $\perp$ & $\perp$ & $\top$ &  &  & \textcolor{red}{$\perp$} & $\top$ &  & $\perp$ & \textcolor{red}{$\top$} & $\perp$ & \\
+    	$\perp$ & $\perp$ & $\perp$ &  & $\perp$ & \textcolor{red}{$\top$} &  & $\perp$ & $\perp$ & $\perp$ &  &  & \textcolor{red}{$\top$} & $\perp$ &  & $\perp$ & \textcolor{red}{$\top$} & $\perp$ & \\
+    \end{tabular}	
+	
+	The 6th row shows that, even when both premises are truth, it is possible for the argument to be false. Therefore, the argument $P \iff Q$ is invalid.
+	
+	\section{1.5 Question 8a}
+	
+	The truth table for $(P \rightarrow Q) \land (Q \rightarrow R)$ looks like:
+ 	
+	\begin{tabular}{ c  c  c | c  c  c  c  c  c  c  c  c  c  c  c  c }
+		P & Q & R & ( & ( & P & $\rightarrow$ & Q & ) & $\&$ & ( & Q & $\rightarrow$ & R & ) & )\\
+		\hline 
+		$\top$ & $\top$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  & $\top$ & $\top$ & $\top$ &  & \\
+		$\top$ & $\top$ & $\perp$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\perp$} &  & $\top$ & $\perp$ & $\perp$ &  & \\
+		$\top$ & $\perp$ & $\top$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\perp$} &  & $\perp$ & $\top$ & $\top$ &  & \\
+		$\top$ & $\perp$ & $\perp$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\perp$} &  & $\perp$ & $\top$ & $\perp$ &  & \\
+		$\perp$ & $\top$ & $\top$ &  &  & $\perp$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  & $\top$ & $\top$ & $\top$ &  & \\
+		$\perp$ & $\top$ & $\perp$ &  &  & $\perp$ & $\top$ & $\top$ &  & \textcolor{red}{$\perp$} &  & $\top$ & $\perp$ & $\perp$ &  & \\
+		$\perp$ & $\perp$ & $\top$ &  &  & $\perp$ & $\top$ & $\perp$ &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\top$ &  & \\
+		$\perp$ & $\perp$ & $\perp$ &  &  & $\perp$ & $\top$ & $\perp$ &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\perp$ &  & \\
+	\end{tabular}
+
+	The truth table for $(P \rightarrow R) \land [ (P \iff Q) \lor (R \iff Q) ]$ looks like: 	
+	
+	\begin{tabular}{ c  c  c | c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c  c }
+		P & Q & R & ( & ( & P & $\rightarrow$ & R & ) & $\&$ & ( & ( & P & $\rightarrow$ & Q & ) & $\lor$ & ( & R & $\rightarrow$ & Q & ) & ) & )\\
+		\hline 
+		$\top$ & $\top$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\top$ & $\top$ & $\top$ &  & $\top$ &  & $\top$ & $\top$ & $\top$ &  &  & \\
+		$\top$ & $\top$ & $\perp$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\perp$} &  &  & $\top$ & $\top$ & $\top$ &  & $\top$ &  & $\perp$ & $\top$ & $\top$ &  &  & \\
+		$\top$ & $\perp$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\perp$} &  &  & $\top$ & $\perp$ & $\perp$ &  & $\perp$ &  & $\top$ & $\perp$ & $\perp$ &  &  & \\
+		$\top$ & $\perp$ & $\perp$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\perp$} &  &  & $\top$ & $\perp$ & $\perp$ &  & $\top$ &  & $\perp$ & $\top$ & $\perp$ &  &  & \\
+		$\perp$ & $\top$ & $\top$ &  &  & $\perp$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\perp$ & $\top$ & $\top$ &  & $\top$ &  & $\top$ & $\top$ & $\top$ &  &  & \\
+		$\perp$ & $\top$ & $\perp$ &  &  & $\perp$ & $\top$ & $\perp$ &  & \textcolor{red}{$\top$} &  &  & $\perp$ & $\top$ & $\top$ &  & $\top$ &  & $\perp$ & $\top$ & $\top$ &  &  & \\
+		$\perp$ & $\perp$ & $\top$ &  &  & $\perp$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  &  & $\perp$ & $\top$ & $\perp$ &  & $\top$ &  & $\top$ & $\perp$ & $\perp$ &  &  & \\
+		$\perp$ & $\perp$ & $\perp$ &  &  & $\perp$ & $\top$ & $\perp$ &  & \textcolor{red}{$\top$} &  &  & $\perp$ & $\top$ & $\perp$ &  & $\top$ &  & $\perp$ & $\top$ & $\perp$ &  &  & \\
+	\end{tabular}
+
+	Since their truth tables look identical, we have shown that the two logical expressions are equivalent.
+	
+	\section{1.5 Question 8b}
+	
+	The truth table for $(P \rightarrow Q) \lor (Q \rightarrow R)$ looks like:
+	
+	\begin{tabular}{ c  c  c | c  c  c  c  c  c  c  c  c  c  c  c  c }
+		P & Q & R & ( & ( & P & $\rightarrow$ & Q & ) & $\lor$ & ( & Q & $\rightarrow$ & R & ) & )\\
+		\hline 
+		$\top$ & $\top$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  & $\top$ & $\top$ & $\top$ &  & \\
+		$\top$ & $\top$ & $\perp$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  & $\top$ & $\perp$ & $\perp$ &  & \\
+		$\top$ & $\perp$ & $\top$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\top$ &  & \\
+		$\top$ & $\perp$ & $\perp$ &  &  & $\top$ & $\perp$ & $\perp$ &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\perp$ &  & \\
+		$\perp$ & $\top$ & $\top$ &  &  & $\perp$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  & $\top$ & $\top$ & $\top$ &  & \\
+		$\perp$ & $\top$ & $\perp$ &  &  & $\perp$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} &  & $\top$ & $\perp$ & $\perp$ &  & \\
+		$\perp$ & $\perp$ & $\top$ &  &  & $\perp$ & $\top$ & $\perp$ &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\top$ &  & \\
+		$\perp$ & $\perp$ & $\perp$ &  &  & $\perp$ & $\top$ & $\perp$ &  & \textcolor{red}{$\top$} &  & $\perp$ & $\top$ & $\perp$ &  & \\
+	\end{tabular}
+
+	Since all truth values are true, we have shown that $(P \rightarrow Q) \lor (Q \rightarrow R)$ is a tautology.
+	
+	
+	
+	
+	
+	
+	
+	
+
+\end{document}
